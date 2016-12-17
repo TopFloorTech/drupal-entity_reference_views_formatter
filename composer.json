@@ -1,0 +1,7 @@
+{
+    "name": "drupal/entity_reference_views_formatter",
+    "description": "Entity Reference Views Formatter",
+    "type": "drupal-module",
+    "license": "GPL-2.0+",
+    "require": {}
+}

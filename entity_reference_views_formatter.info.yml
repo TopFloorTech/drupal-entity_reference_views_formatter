@@ -1,0 +1,9 @@
+name: 'Entity Reference Views Formatter'
+description: 'Allows rendering an entity reference field as a view.'
+package: Views
+type: module
+core: 8.x
+
+dependencies:
+  - views
+  - entity_reference
