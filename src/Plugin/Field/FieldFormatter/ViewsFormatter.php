@@ -55,8 +55,6 @@ class ViewsFormatter extends FormatterBase {
       ];
     }
 
-    dpm($element[0]['#view_arguments']);
-
     return $element;
   }
 
