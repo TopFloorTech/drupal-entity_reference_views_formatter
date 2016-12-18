@@ -6,6 +6,7 @@ use Drupal\Core\Annotation\Translation;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\Annotation\FieldFormatter;
+use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -53,6 +54,8 @@ class ViewsFormatter extends FormatterBase {
         '#theme' => 'viewfield_formatter_default',
       ];
     }
+
+    dpm($element[0]['#view_arguments']);
 
     return $element;
   }
@@ -133,8 +136,8 @@ class ViewsFormatter extends FormatterBase {
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The current entity.
    *
-   * @return array The view's arguments.
-   *   The view's arguments.
+   * @return string
+   *   The view's arguments comma-separated.
    */
   protected function getArguments(FieldItemListInterface $items, EntityInterface $entity) {
     $arguments = [];
@@ -144,14 +147,15 @@ class ViewsFormatter extends FormatterBase {
     } else {
       $ids = [];
 
+      /** @var FieldItemInterface $item */
       foreach ($items as $item) {
-        $ids[] = $item->getValue();
+        $ids[] = $item->get('target_id')->getValue();
       }
 
       $arguments[] = implode('+', $ids);
     }
 
-    return $arguments;
+    return implode(',', $arguments);
   }
 
   /**
