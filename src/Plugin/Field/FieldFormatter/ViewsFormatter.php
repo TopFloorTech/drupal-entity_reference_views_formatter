@@ -13,7 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Views;
 
 /**
- * Plugin implementation of the 'slug' formatter.
+ * Plugin implementation of the 'Views' formatter.
  *
  * @FieldFormatter(
  *   id = "entity_reference_views",
