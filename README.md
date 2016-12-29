@@ -1,3 +1,7 @@
+**IMPORTANT NOTE**
+
+This module is deprecated in favor of https://www.drupal.org/project/views_field_formatter. That module is more generic and can accomplish everything this one can and more.
+
 **SUMMARY**
 
 Allows rendering an entity reference field as a view.
